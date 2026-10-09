@@ -1,6 +1,6 @@
 import { business as b, services, cities, reviews, colors, stats } from "../data/site.mjs";
 import { icons, starRow } from "./icons.mjs";
-import { heroHouse, beforeSvg, afterSvg, previewHouse, areaMap, placeholderPhoto, photoOr } from "./art.mjs";
+import { heroHouse, beforeSvg, afterSvg, previewHouse, areaMap, placeholderPhoto, photoOr, logoMark } from "./art.mjs";
 import { esc } from "./layout.mjs";
 
 export function leadForm({ id = "quote", title = "Get Your Free Estimate", sub = "Written quote within 24 hours. No pressure, no obligation.", service = "", city = "", compact = false } = {}) {
@@ -30,26 +30,67 @@ export function leadForm({ id = "quote", title = "Get Your Free Estimate", sub =
 }
 
 export function hero() {
-  return `<section class="hero">
-  <div class="container hero__grid">
-    <div>
-      <span class="badge"><span class="dot"></span> Now booking in Palm Beach County</span>
-      <h1>Seamless Gutters That <span class="hl">Never Leak.</span> Installed in a Day.</h1>
-      <p class="hero__lead">Custom 6" and 7" seamless aluminum gutters, honest repairs and clog-proof guards for Boynton Beach, Delray, Boca and all of Palm Beach County. Licensed, insured, and backed by a lifetime workmanship warranty.</p>
-      <div class="hero__actions">
-        <a class="btn btn--primary btn--lg" href="#quote">Get a Free Estimate ${icons.arrow}</a>
-        <a class="btn btn--ghost-light btn--lg" href="tel:${b.phoneRaw}">${icons.phone} ${b.phone}</a>
+  const words = (txt) => txt.split(" ").map((w, i) => `<span class="w" style="--i:${i}"><i>${w}</i></span>`).join(" ");
+  const chips = colors.slice(0, 9).map((c, i) => `<button type="button" class="swatch swatch--story" data-hex="${c.hex}" data-name="${c.name}" style="background:${c.hex}" aria-label="${c.name}" aria-pressed="${i === 0}"></button>`).join("");
+  return `<div class="curtain" aria-hidden="true"><div class="curtain__inner">${logoMark.replace(/#lg\b|id="lg"/g, (m) => m.replace("lg", "lgc"))}<span>Ocean<em>1</em>Gutters</span></div></div>
+<section class="story" id="top" data-story>
+  <div class="story__stage">
+    <div class="hero__scene" aria-hidden="true" data-scene>
+      <div class="hero__fallback">${heroHouse()}</div>
+      <div class="hero__scrim"></div>
+      <div class="hero__vignette"></div>
+    </div>
+    <div class="story__ui">
+      <div class="container hero__grid story__block story__hero" data-range="0,0.17">
+        <div class="hero__copy">
+          <span class="badge"><span class="dot"></span> Boca Raton · Delray Beach · Boynton Beach</span>
+          <h1>${words("Seamless Gutter Installation &")} <span class="hl">${words("Leaf Guards.")}</span><br>${words("Boca Raton to Boynton Beach.")}</h1>
+          <p class="hero__lead">Custom 6" and 7" seamless aluminum gutters and clog-proof leaf guard gutters, roll-formed in your driveway and installed in a day. Licensed, insured, lifetime workmanship warranty.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" href="#quote" data-magnetic>Get a Free Estimate ${icons.arrow}</a>
+            <a class="btn btn--ghost-light btn--lg" href="tel:${b.phoneRaw}" data-magnetic>${icons.phone} ${b.phone}</a>
+          </div>
+          <div class="hero__trust">
+            <span class="rating-pill" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);color:#fff">${starRow(5)} <strong>${b.rating.value}</strong> <small style="color:#b8c9dc">Google rating</small></span>
+            <ul><li>${icons.shield} Licensed &amp; Insured</li><li>${icons.award} Lifetime Warranty</li><li>${icons.bolt} 24-Hour Quotes</li></ul>
+          </div>
+        </div>
+        <div class="hero__form">${leadForm({ id: "quote" })}</div>
       </div>
-      <div class="hero__trust">
-        <span class="rating-pill" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);color:#fff">${starRow(5)} <strong>${b.rating.value}</strong> <small style="color:#b8c9dc">Google rating</small></span>
-        <ul><li>${icons.shield} Licensed &amp; Insured</li><li>${icons.award} Lifetime Warranty</li><li>${icons.bolt} 24-Hour Quotes</li></ul>
+      <div class="container story__block story__caption" data-range="0.2,0.42">
+        <span class="story__num">01 — The problem</span>
+        <h2>60 inches of rain a year.<br>Most of it in 20-minute bursts.</h2>
+        <p>Builder-grade 5" gutters overflow at the fascia, rot the soffit and dump water at your foundation. Sectional gutters leak at every seam.</p>
+      </div>
+      <div class="container story__block story__caption story__caption--right" data-range="0.46,0.68">
+        <span class="story__num">02 — Seamless installation</span>
+        <h2>One continuous piece.<br>Formed on your driveway.</h2>
+        <p>Heavy-gauge .032 aluminum, roll-formed to the exact length of each run, hung on screw-in hidden hangers every 24". No seams. No leaks.</p>
+      </div>
+      <div class="container story__block story__caption" data-range="0.7,0.88">
+        <span class="story__num">03 — Leaf guards &amp; downspouts</span>
+        <h2>Leaves stay out.<br>Water goes where it should.</h2>
+        <p>Stainless micro-mesh leaf guards stop palm fronds, pine needles and roof grit. Oversized 3"x4" downspouts carry the water away from your home.</p>
+      </div>
+      <div class="container story__block story__caption story__caption--center" data-range="0.9,1">
+        <span class="story__num">04 — Your color</span>
+        <h2>30+ colors. Choose yours.</h2>
+        <div class="swatches swatches--story" role="group" aria-label="Gutter colors">${chips}</div>
+        <p class="colors__name" style="color:#fff">Selected: <span id="story-color-name">${colors[0].name}</span></p>
+        <a class="btn btn--primary btn--lg" href="#quote" data-magnetic>Get my free estimate ${icons.arrow}</a>
       </div>
     </div>
-    <div class="hero__form reveal" data-delay="2">
-      ${leadForm({ id: "quote" })}
-    </div>
+    <ol class="story__dots" aria-hidden="true"><li data-at="0"></li><li data-at="0.3"></li><li data-at="0.56"></li><li data-at="0.78"></li><li data-at="0.95"></li></ol>
+    <a class="hero__scrollhint" href="#services" aria-label="Scroll"><span></span>Scroll</a>
   </div>
-</section>`;
+</section>
+${ticker()}`;
+}
+
+export function ticker() {
+  const items = cities.map((c) => c.name).concat(["Seamless Gutters", "Leaf Guard Gutters", "Gutter Repair", "Gutter Cleaning"]);
+  const row = items.map((i) => `<span>${i}</span>`).join('<i aria-hidden="true">✦</i>');
+  return `<div class="ticker" aria-label="Service areas"><div class="ticker__track">${row}<i aria-hidden="true">✦</i>${row}<i aria-hidden="true">✦</i></div></div>`;
 }
 
 export function trustBar() {
@@ -62,13 +103,24 @@ export function trustBar() {
   return `<div class="trustbar"><div class="container trustbar__inner">${items.map(([i, t, s]) => `<div class="trust-item">${i}<div>${t}<small>${s}</small></div></div>`).join("")}</div></div>`;
 }
 
-export function servicesGrid({ heading = "Everything Your Gutters Need, One Call", intro = "From brand-new seamless systems to a single leaking corner, we handle the full life of your gutters." } = {}) {
+export function servicesGrid({ heading = "Everything Your Gutters Need, One Call", intro = "From brand-new seamless systems to a single leaking corner, we handle the full life of your gutters.", hscroll = false } = {}) {
+  if (hscroll) {
+    return `<section class="hscroll section--dark" id="services" data-hscroll data-spot>
+  <div class="hscroll__pin">
+    <div class="container"><div class="section-head reveal"><span class="eyebrow">Our Services</span><h2>${heading}</h2><p class="lead">${intro}</p></div></div>
+    <div class="hscroll__track">
+      ${services.map((s, i) => `<a class="svc-card svc-card--glass reveal" data-tilt data-delay="${(i % 3) + 1}" href="/services/${s.slug}/"><span class="svc-card__index">0${i + 1}</span><div class="svc-card__icon">${icons[s.icon]}</div><h3>${s.name}</h3><p>${s.blurb}</p><span class="link">Learn more ${icons.arrow}</span></a>`).join("")}
+      <a class="svc-card svc-card--glass svc-card--cta reveal" data-tilt href="/contact/"><span class="svc-card__index">06</span><div class="svc-card__icon">${icons.camera}</div><h3>Not sure what you need?</h3><p>Text us a photo of the problem and we'll tell you what it is and roughly what it costs, usually within the hour.</p><span class="link">Send a photo ${icons.arrow}</span></a>
+    </div>
+  </div>
+</section>`;
+  }
   return `<section class="section" id="services">
   <div class="container">
     <div class="section-head section-head--center reveal"><span class="eyebrow">Our Services</span><h2>${heading}</h2><p class="lead">${intro}</p></div>
     <div class="grid grid-3">
-      ${services.map((s, i) => `<a class="svc-card reveal" data-delay="${(i % 3) + 1}" href="/services/${s.slug}/"><div class="svc-card__icon">${icons[s.icon]}</div><h3>${s.name}</h3><p>${s.blurb}</p><span class="link">Learn more ${icons.arrow}</span></a>`).join("")}
-      <a class="svc-card reveal" data-delay="3" href="/contact/" style="background:linear-gradient(135deg,var(--navy-800),var(--ocean-600));color:#fff;border:0"><div class="svc-card__icon" style="background:rgba(255,255,255,.12);color:#fff">${icons.camera}</div><h3 style="color:#fff">Not sure what you need?</h3><p style="color:#c3d3e5">Text us a photo of the problem and we'll tell you what it is and roughly what it costs, usually within the hour.</p><span class="link" style="color:var(--aqua-300)">Send a photo ${icons.arrow}</span></a>
+      ${services.map((s, i) => `<a class="svc-card reveal" data-tilt data-delay="${(i % 3) + 1}" href="/services/${s.slug}/"><div class="svc-card__icon">${icons[s.icon]}</div><h3>${s.name}</h3><p>${s.blurb}</p><span class="link">Learn more ${icons.arrow}</span></a>`).join("")}
+      <a class="svc-card reveal" data-tilt data-delay="3" href="/contact/" style="background:linear-gradient(135deg,var(--navy-800),var(--ocean-600));color:#fff;border:0"><div class="svc-card__icon" style="background:rgba(255,255,255,.12);color:#fff">${icons.camera}</div><h3 style="color:#fff">Not sure what you need?</h3><p style="color:#c3d3e5">Text us a photo of the problem and we'll tell you what it is and roughly what it costs, usually within the hour.</p><span class="link" style="color:var(--aqua-300)">Send a photo ${icons.arrow}</span></a>
     </div>
   </div>
 </section>`;
@@ -84,7 +136,7 @@ export function whyUs() {
   return `<section class="section section--alt" id="why">
   <div class="container split">
     <div class="reveal">
-      <div class="media">${placeholderPhoto("Photo slot: crew installing seamless gutters (add assets/img/why-crew.jpg)", "why-crew", "Ocean1Gutters crew installing seamless gutters on a Palm Beach County home")}</div>
+      <div class="media" data-parallax="0.12">${placeholderPhoto("Photo slot: crew installing seamless gutters (add assets/img/why-crew.jpg)", "why-crew", "Ocean1Gutters crew installing seamless gutters on a Palm Beach County home")}</div>
     </div>
     <div>
       <div class="section-head reveal"><span class="eyebrow">Why Ocean1Gutters</span><h2>Built Like We're Going to See You Again. Because We Will.</h2><p class="lead">We're a local, family-owned crew in ${b.city}. Our name is on every job, so we don't cut the corners that fail two rainy seasons from now.</p></div>
@@ -95,7 +147,7 @@ export function whyUs() {
 }
 
 export function beforeAfter() {
-  return `<section class="section" id="results">
+  return `<section class="section section--dark" id="results" data-spot>
   <div class="container split">
     <div>
       <div class="section-head reveal"><span class="eyebrow">See the Difference</span><h2>Drag to Compare: Old Sectional vs. New Seamless</h2><p class="lead">Sagging, leaking, overflowing gutters are the #1 cause of fascia rot and foundation washout in South Florida. Here's what a proper seamless system looks like.</p></div>
@@ -107,7 +159,7 @@ export function beforeAfter() {
       </ul>
     </div>
     <div class="reveal" data-delay="2">
-      <div class="ba">
+      <div class="ba" data-parallax="0.1" data-tilt data-tilt-max="4">
         <div class="ba__layer ba__layer--after">${photoOr("after", afterSvg, "After: new seamless gutters installed by Ocean1Gutters")}</div>
         <div class="ba__layer ba__layer--before">${photoOr("before", beforeSvg, "Before: sagging, leaking sectional gutters")}</div>
         <div class="ba__handle"></div>
@@ -131,7 +183,7 @@ export function process({ steps, heading = "How It Works", eyebrow = "Simple Pro
   return `<section class="section section--alt" id="process">
   <div class="container">
     <div class="section-head section-head--center reveal"><span class="eyebrow">${eyebrow}</span><h2>${heading}</h2></div>
-    <div class="steps${list.length === 5 ? " steps--5" : ""}">${list.map((s, i) => `<div class="step reveal" data-delay="${i + 1}"><h3>${Array.isArray(s) ? s[0] : `Step ${i + 1}`}</h3><p>${Array.isArray(s) ? s[1] : s}</p></div>`).join("")}</div>
+    <div class="steps${list.length === 5 ? " steps--5" : ""}">${list.map((s, i) => `<div class="step reveal" data-tilt data-delay="${i + 1}"><h3>${Array.isArray(s) ? s[0] : `Step ${i + 1}`}</h3><p>${Array.isArray(s) ? s[1] : s}</p></div>`).join("")}</div>
   </div>
 </section>`;
 }
@@ -182,14 +234,14 @@ export function colorPicker() {
       <p class="colors__name">Selected: <span id="color-name">${colors[0].name}</span></p>
       <a class="btn btn--navy" href="#quote">Quote in this color ${icons.arrow}</a>
     </div>
-    <div class="house-preview reveal" data-delay="2">${previewHouse(colors[0].hex)}</div>
+    <div class="house-preview reveal" data-parallax="0.1" data-tilt data-tilt-max="5" data-delay="2">${previewHouse(colors[0].hex)}</div>
   </div>
 </section>`;
 }
 
 export function statsBand() {
-  return `<section class="section section--dark section--tight">
-  <div class="container stats">${stats.map((s, i) => `<div class="stat reveal" data-delay="${i + 1}"><div class="stat__num"><span data-count="${s.value}" data-decimals="${s.decimals || 0}">${s.value.toLocaleString("en-US")}</span><small>${s.suffix}</small></div><div class="stat__label">${s.label}</div></div>`).join("")}</div>
+  return `<section class="section section--dark section--tight" data-spot>
+  <div class="container stats">${stats.map((s, i) => `<div class="stat reveal" data-tilt data-delay="${i + 1}"><div class="stat__num"><span data-count="${s.value}" data-decimals="${s.decimals || 0}">${s.value.toLocaleString("en-US")}</span><small>${s.suffix}</small></div><div class="stat__label">${s.label}</div></div>`).join("")}</div>
 </section>`;
 }
 
@@ -200,7 +252,7 @@ export function reviewsSection({ heading = "Palm Beach County Homeowners Trust U
       <p><span class="rating-pill">${starRow(5)} <strong>${b.rating.value} / 5</strong> <small>from ${b.rating.count}+ reviews</small></span></p></div>
     <div class="reviews reveal">
       <div class="reviews__track" tabindex="0" aria-label="Customer reviews">
-        ${reviews.map((r) => `<article class="review">${starRow(r.stars)}<p class="review__text">“${r.text}”</p><div class="review__meta"><div class="avatar" aria-hidden="true">${r.name[0]}</div><div><strong>${r.name}</strong><small>${r.city}, FL · Verified customer</small></div></div></article>`).join("")}
+        ${reviews.map((r) => `<article class="review" data-tilt>${starRow(r.stars)}<p class="review__text">“${r.text}”</p><div class="review__meta"><div class="avatar" aria-hidden="true">${r.name[0]}</div><div><strong>${r.name}</strong><small>${r.city}, FL · Verified customer</small></div></div></article>`).join("")}
       </div>
       <div class="reviews__nav"><button class="reviews__btn reviews__btn--prev" type="button" aria-label="Previous reviews">${icons.arrowLeft}</button><button class="reviews__btn reviews__btn--next" type="button" aria-label="Next reviews">${icons.arrow}</button></div>
       <p class="text-center" style="margin-top:20px"><a class="btn btn--outline" href="${b.social.google}" target="_blank" rel="noopener">${icons.google} Read all reviews on Google</a></p>
@@ -210,13 +262,13 @@ export function reviewsSection({ heading = "Palm Beach County Homeowners Trust U
 }
 
 export function serviceArea() {
-  return `<section class="section section--alt" id="areas">
+  return `<section class="section section--dark" id="areas" data-spot>
   <div class="container area">
-    <div class="area__map reveal">${areaMap(cities)}</div>
+    <div class="area__map reveal" data-parallax="0.08">${areaMap(cities)}</div>
     <div>
-      <div class="section-head reveal"><span class="eyebrow">Service Area</span><h2>Proudly Serving All of Palm Beach County</h2><p class="lead">Headquartered in ${b.city}, with crews running daily from Boca Raton to Jupiter. Hover a city to see it on the map.</p></div>
+      <div class="section-head reveal"><span class="eyebrow">Service Area</span><h2>Boca Raton to Boynton Beach, and Everywhere Between</h2><p class="lead">Headquartered in ${b.city}, with crews running daily from Deerfield Beach up to West Palm Beach. Hover a city to see it on the map.</p></div>
       <ul class="area__list reveal">${cities.map((c) => `<li><a href="/gutters-${c.slug}-fl/" data-city="${c.slug}">${icons.pin} ${c.name}</a></li>`).join("")}</ul>
-      <p class="form__fine" style="text-align:left">Don't see your city? We cover all of Palm Beach County and northern Broward. <a href="/contact/">Ask us.</a></p>
+      <p class="form__fine" style="text-align:left;color:#8fa6bf">Don't see your city? We cover all of southern Palm Beach County and northern Broward. <a href="/contact/" style="color:#7fe3d7">Ask us.</a></p>
     </div>
   </div>
 </section>`;
@@ -232,14 +284,15 @@ export function faqSection(faqs, { heading = "Questions Homeowners Ask Us Every 
 }
 
 export function ctaBand({ heading = "Ready for Gutters That Actually Work?", sub = "Free on-site estimate. Written quote in 24 hours. Most installs done in a single day." } = {}) {
-  return `<section class="section section--tight"><div class="container"><div class="cta-band reveal">
+  return `<section class="section section--tight"><div class="container"><div class="cta-band reveal" data-spot>
     <div><h2>${heading}</h2><p>${sub}</p></div>
     <div class="cta-band__actions"><a class="btn btn--primary btn--lg" href="/contact/">Get a Free Estimate ${icons.arrow}</a><a class="btn btn--ghost-light btn--lg" href="tel:${b.phoneRaw}">${icons.phone} ${b.phone}</a></div>
   </div></div></section>`;
 }
 
 export function pageHero({ eyebrow, h1, lead, crumbsHtml = "", cta = true }) {
-  return `<section class="page-hero"><div class="container">${crumbsHtml}${eyebrow ? `<span class="eyebrow">${eyebrow}</span>` : ""}<h1>${h1}</h1>${lead ? `<p class="lead">${lead}</p>` : ""}${cta ? `<div class="hero__actions"><a class="btn btn--primary btn--lg" href="#quote">Get a Free Estimate ${icons.arrow}</a><a class="btn btn--ghost-light btn--lg" href="tel:${b.phoneRaw}">${icons.phone} ${b.phone}</a></div>` : ""}</div></section>`;
+  const rainLines = Array.from({ length: 36 }, (_, i) => `<line x1="${i * 40 + 10}" y1="0" x2="${i * 40 + 2}" y2="28"/>`).join("");
+  return `<section class="page-hero"><svg class="page-hero__rain" viewBox="0 0 1440 300" preserveAspectRatio="none" aria-hidden="true"><g class="rain">${rainLines}</g></svg><div class="container">${crumbsHtml}${eyebrow ? `<span class="eyebrow">${eyebrow}</span>` : ""}<h1>${h1}</h1>${lead ? `<p class="lead">${lead}</p>` : ""}${cta ? `<div class="hero__actions"><a class="btn btn--primary btn--lg" href="#quote">Get a Free Estimate ${icons.arrow}</a><a class="btn btn--ghost-light btn--lg" href="tel:${b.phoneRaw}">${icons.phone} ${b.phone}</a></div>` : ""}</div></section>`;
 }
 
 export function contactAside({ service, city } = {}) {

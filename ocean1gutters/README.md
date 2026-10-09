@@ -17,6 +17,14 @@ Both share the same CSS/JS and render identically. Pick one; the content, SEO an
 
 **Pages (27)**: Home, Services hub + 5 service pages, Service Areas hub + 10 city landing pages, About, Contact, Blog + 3 SEO articles, Thank-you, Privacy, 404.
 
+**Cinematic homepage**
+- Scroll-driven 3D story (Three.js): a rendered South Florida home with barrel-tile roof, stucco, impact windows and seamless gutters. Scrolling moves the camera through five shots (establishing → storm → gutter close-up → leaf guards & downspout → dusk pull-back with live gutter color picker). Rain, water running through the gutters, bloom, pointer parallax.
+- Smooth inertial scrolling (Lenis), pinned horizontal-scroll services strip, word-by-word heading reveals, 3D tilt cards, cursor spotlight on dark sections, magnetic buttons, custom cursor, intro curtain, page transitions.
+- Everything is lazy-loaded after the page is interactive, degrades automatically on slow GPUs (bloom off, pixel ratio 1) and respects `prefers-reduced-motion`. No-WebGL browsers get an illustrated fallback. SEO content is plain server-rendered HTML underneath.
+- Libraries are self-hosted in `site/assets/js/vendor/` (Three.js r128 + bloom passes, Lenis). No CDN dependency.
+
+**SEO focus**: primary keywords are *seamless gutter installation* and *leaf guard gutters / gutter guards*, targeted at Boca Raton → Delray Beach → Boynton Beach and surrounding South Palm Beach County (Highland Beach, Deerfield Beach, Lake Worth Beach, Lantana, Greenacres, Wellington, West Palm Beach).
+
 **Lead generation**
 - Lead form in the hero, on every service/city page (sticky sidebar), contact page and blog posts
 - Click-to-call + WhatsApp everywhere; sticky mobile call bar
@@ -66,7 +74,7 @@ Pages created by the installer use the **Ocean1 Designed Page** template. Anythi
 
 Everything lives in **`site/data/site.mjs`**: business details, services, cities/neighborhoods, FAQs, reviews, colors, blog posts, navigation. Edit, then `npm run build`. The build regenerates `dist/` **and** the theme's `inc/content.json` + `inc/partials/*.html`, so both outputs stay in sync.
 
-**Photos**: drop files into `site/assets/img/` using these names and rebuild. They replace the illustrated placeholders automatically:
+**Photos**: the client's real job photos are the single biggest upgrade left. Drop files into `site/assets/img/` using these names and rebuild. They replace the illustrated placeholders automatically:
 
 | File | Where it shows |
 |---|---|
@@ -100,13 +108,14 @@ wordpress/ocean1gutters/ ← WordPress theme (templates, Customizer, Leads CPT, 
 - [ ] Google Business Profile review link and real review count (4.9★ / 200+ assumed)
 - [ ] Facebook / Instagram URLs
 - [ ] Pricing ranges in the estimator and FAQs (`$9–$16/ft` for 6", set in `main.js` → `rates`)
-- [ ] Replace illustrated placeholders with real job photos
+- [ ] Replace illustrated placeholders with real job photos (crew on ladder, leaf guard close-up, finished downspouts, logo file)
 - [ ] Submit `sitemap.xml` in Google Search Console; verify the 301s from the old URLs
 - [ ] Add GTM/GA4 and set up a conversion on `/thank-you/`
 
 ## Verification performed
 
 - Build generates 27 pages; HTML structure, duplicate-id and single-H1 checks pass on every page
+- 3D story rendered in headless Chromium (software WebGL) at every scroll stage on desktop and mobile with zero console errors
 - Zero JS console errors at desktop (1440px) and mobile (390px)
 - Estimator, color picker, before/after, menus and form validation exercised in headless Chromium
 - WordPress theme installed on a local WordPress (SQLite) instance: importer, all routes (200), 404, sitemap, schema JSON, Customizer tokens, and an end-to-end form submission landing in the Leads inbox and redirecting to `/thank-you/`

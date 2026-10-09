@@ -7,14 +7,14 @@ import { placeholderPhoto } from "./art.mjs";
 const shell = (opts, body, { solid = false } = {}) => ({ ...opts, body, solid });
 
 export function homePage() {
-  const title = `Seamless Gutters Boynton Beach, Delray Beach & Boca Raton | ${b.name}`;
-  const description = `Seamless gutter installation, repair, cleaning & gutter guards in Palm Beach County. Licensed & insured, lifetime warranty, 4.9★ rated. Free 24-hour estimates: ${b.phone}.`;
+  const title = `Seamless Gutter Installation & Leaf Guard Gutters | Boca Raton, Delray Beach, Boynton Beach | ${b.name}`;
+  const description = `Seamless gutter installation and leaf guard gutters from Boca Raton to Boynton Beach. Licensed & insured, lifetime warranty, 4.9★ rated. Installed in a day. Free 24-hour estimates: ${b.phone}.`;
   const schema = [
     localBusinessSchema({ cities, services }),
     { "@context": "https://schema.org", "@type": "WebSite", "@id": abs("/#website"), url: b.url, name: b.name, publisher: { "@id": abs("/#business") } },
     faqSchema(homeFaqs),
   ];
-  const body = S.hero() + S.trustBar() + S.servicesGrid() + S.whyUs() + S.beforeAfter() + S.process() + S.estimator() + S.colorPicker() + S.statsBand() + S.reviewsSection() + S.serviceArea() + S.faqSection(homeFaqs) + S.ctaBand();
+  const body = S.hero() + S.trustBar() + S.servicesGrid({ heading: "Installation, Leaf Guards, Repair. One Local Crew.", intro: "From brand-new seamless systems with leaf guards to a single leaking corner, we handle the full life of your gutters.", hscroll: true }) + S.whyUs() + S.beforeAfter() + S.process() + S.estimator() + S.colorPicker() + S.statsBand() + S.reviewsSection() + S.serviceArea() + S.faqSection(homeFaqs) + S.ctaBand();
   return shell({ title, description, path: "/", schema }, body);
 }
 
@@ -43,7 +43,7 @@ export function servicePage(s) {
         <p class="lead">${s.intro}</p>
         <div class="media" style="margin:28px 0">${placeholderPhoto(`Photo slot: ${s.name} (add assets/img/${s.slug}.jpg)`, s.slug, `${s.name} by Ocean1Gutters in Palm Beach County`)}</div>
         <h2>What's Included</h2>
-        <div class="benefit-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">${s.benefits.map((x) => `<div class="benefit"><h3>${x.h}</h3><p>${x.p}</p></div>`).join("")}</div>
+        <div class="benefit-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">${s.benefits.map((x) => `<div class="benefit" data-tilt><h3>${x.h}</h3><p>${x.p}</p></div>`).join("")}</div>
         <h2>How ${s.short} Works</h2>
         <ol class="checklist" style="counter-reset:none">${s.process.map((p) => `<li>${icons.checkCircle}<span>${p}</span></li>`).join("")}</ol>
         <h2>Serving All of Palm Beach County</h2>
@@ -61,20 +61,20 @@ export function servicePage(s) {
 }
 
 export function areasIndexPage() {
-  const title = `Gutter Company Serving Palm Beach County | Service Areas | ${b.name}`;
-  const description = `Ocean1Gutters installs, repairs and cleans gutters across Palm Beach County: Boynton Beach, Delray Beach, Boca Raton, Lake Worth, West Palm Beach, Wellington, Jupiter and more.`;
+  const title = `Gutter Installation Service Area: Boca Raton to Boynton Beach | ${b.name}`;
+  const description = `Ocean1Gutters installs seamless gutters and leaf guards across southern Palm Beach County: Boca Raton, Delray Beach, Boynton Beach, Highland Beach, Lake Worth Beach, Lantana, Wellington and more.`;
   const cr = [{ label: "Home", href: "/" }, { label: "Service Areas", href: "/service-areas/" }];
   const body = S.pageHero({ eyebrow: "Service Areas", h1: "Gutter Services Across Palm Beach County", lead: `Based in ${b.city}, our crews run daily from Boca Raton to Jupiter. Pick your city for local details.`, crumbsHtml: crumbs(cr) })
     + S.serviceArea()
-    + `<section class="section"><div class="container"><div class="grid grid-3">${cities.map((c) => `<a class="svc-card reveal" href="/gutters-${c.slug}-fl/"><div class="svc-card__icon">${icons.pin}</div><h3>${c.name}, FL</h3><p>${c.note}</p><span class="link">Gutters in ${c.name} ${icons.arrow}</span></a>`).join("")}</div></div></section>`
+    + `<section class="section"><div class="container"><div class="grid grid-3">${cities.map((c) => `<a class="svc-card reveal" data-tilt href="/gutters-${c.slug}-fl/"><div class="svc-card__icon">${icons.pin}</div><h3>${c.name}, FL</h3><p>${c.note}</p><span class="link">Gutters in ${c.name} ${icons.arrow}</span></a>`).join("")}</div></div></section>`
     + S.ctaBand();
   return shell({ title, description, path: "/service-areas/", schema: [breadcrumbSchema(cr)] }, body);
 }
 
 export function cityPage(c) {
   const path = `/gutters-${c.slug}-fl/`;
-  const title = `Seamless Gutters ${c.name}, FL | Installation, Repair & Cleaning | ${b.name}`;
-  const description = `Gutter installation, repair, cleaning & gutter guards in ${c.name}, FL. Local, licensed & insured, 4.9★ rated. Seamless 6" & 7" aluminum gutters with lifetime warranty. Free estimates: ${b.phone}.`;
+  const title = `Seamless Gutter Installation & Leaf Guard Gutters in ${c.name}, FL | ${b.name}`;
+  const description = `Seamless gutter installation and leaf guard gutters in ${c.name}, FL, plus repair and cleaning. Local, licensed & insured, 4.9★ rated. 6" & 7" aluminum gutters with lifetime warranty. Free estimates: ${b.phone}.`;
   const cr = [{ label: "Home", href: "/" }, { label: "Service Areas", href: "/service-areas/" }, { label: c.name, href: path }];
   const faqs = [
     { q: `How much do seamless gutters cost in ${c.name}?`, a: `Most ${c.name} homes run $1,500 to $4,000 for a complete 6" seamless aluminum system, or roughly $9 to $16 per linear foot installed. Use our instant estimator on the homepage or request a free on-site quote.` },
@@ -88,7 +88,7 @@ export function cityPage(c) {
     faqSchema(faqs),
   ];
   const localReviews = reviews.filter((r) => r.city.toLowerCase().includes(c.name.split(" ")[0].toLowerCase()));
-  const body = S.pageHero({ eyebrow: `${c.name}, Florida`, h1: `Seamless Gutters in ${c.name}, FL`, lead: `Installation, repair, cleaning and gutter guards for ${c.name} homeowners. ${c.hq ? "Our home base." : `Serving ${c.name} since ${b.founded}.`}`, crumbsHtml: crumbs(cr) })
+  const body = S.pageHero({ eyebrow: `${c.name}, Florida`, h1: `Seamless Gutter Installation & Leaf Guards in ${c.name}, FL`, lead: `Installation, repair, cleaning and gutter guards for ${c.name} homeowners. ${c.hq ? "Our home base." : `Serving ${c.name} since ${b.founded}.`}`, crumbsHtml: crumbs(cr) })
     + `<section class="section"><div class="container with-aside">
       <div class="content">
         <h2>${c.name}'s Local Seamless Gutter Company</h2>
@@ -173,7 +173,7 @@ export function blogIndexPage() {
   const description = `Straight answers on gutter cost, gutter guards, cleaning schedules and storm prep for Palm Beach County homeowners, from the crew at ${b.name}.`;
   const cr = [{ label: "Home", href: "/" }, { label: "Blog", href: "/blog/" }];
   const body = S.pageHero({ eyebrow: "Blog", h1: "Gutter Advice for South Florida Homeowners", lead: "Pricing guides, maintenance schedules and honest product reviews from people who hang gutters every day.", crumbsHtml: crumbs(cr), cta: false })
-    + `<section class="section"><div class="container"><div class="grid grid-3">${posts.map((p) => `<a class="post-card reveal" href="/blog/${p.slug}/"><div class="post-card__img">${icons.doc}</div><div class="post-card__body"><span class="post-card__meta">${new Date(p.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })} · ${p.readTime} read</span><h3>${p.title}</h3><p>${p.excerpt}</p></div></a>`).join("")}</div></div></section>`
+    + `<section class="section"><div class="container"><div class="grid grid-3">${posts.map((p) => `<a class="post-card reveal" data-tilt href="/blog/${p.slug}/"><div class="post-card__img">${icons.doc}</div><div class="post-card__body"><span class="post-card__meta">${new Date(p.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })} · ${p.readTime} read</span><h3>${p.title}</h3><p>${p.excerpt}</p></div></a>`).join("")}</div></div></section>`
     + S.ctaBand();
   return shell({ title, description, path: "/blog/", schema: [breadcrumbSchema(cr)] }, body);
 }

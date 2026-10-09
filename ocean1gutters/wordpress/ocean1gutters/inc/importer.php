@@ -60,6 +60,11 @@ function o1g_install_content(): array {
 	o1g_upsert_page( [ 'slug' => 'thank-you', 'title' => 'Thank You', 'template' => $T, 'partial' => 'thank-you' ] );
 	o1g_upsert_page( [ 'slug' => 'privacy', 'title' => 'Privacy Policy', 'content' => '<p>' . esc_html( $c['business']['legalName'] ) . ' collects the information you submit through forms on this site (name, phone, email, address, project details) solely to respond to your request and provide gutter services. We do not sell your information. We may use analytics tools that collect anonymized usage data. By submitting a form you consent to be contacted by phone, text or email about your request. To have your data removed, email ' . esc_html( $c['business']['email'] ) . '.</p>' ] );
 	$log[] = 'Pages created/updated: ' . ( 8 + count( $c['services'] ) + count( $c['cities'] ) );
+	// Remove designed pages whose layout no longer exists (e.g. a city dropped from the service area).
+	foreach ( get_posts( [ 'post_type' => 'page', 'numberposts' => -1, 'meta_key' => '_o1g_partial', 'fields' => 'ids' ] ) as $pid ) {
+		$partial = get_post_meta( $pid, '_o1g_partial', true );
+		if ( $partial && ! file_exists( O1G_DIR . '/inc/partials/' . basename( $partial ) . '.html' ) ) { wp_delete_post( $pid, true ); $log[] = 'Removed stale page: ' . $partial; }
+	}
 	// Remove WordPress sample content.
 	if ( $sp = get_page_by_path( 'sample-page' ) ) { wp_delete_post( $sp->ID, true ); }
 	if ( $hw = get_page_by_path( 'hello-world', OBJECT, 'post' ) ) { wp_delete_post( $hw->ID, true ); }

@@ -2,7 +2,7 @@
   "business": {
     "name": "Ocean1Gutters",
     "legalName": "Ocean1Gutters LLC",
-    "tagline": "Seamless Gutters Built for South Florida Rain",
+    "tagline": "Seamless Gutter Installation & Leaf Guard Gutters, Boca Raton to Boynton Beach",
     "phone": "(561) 767-6528",
     "phoneRaw": "+15617676528",
     "whatsapp": "15617676528",
@@ -82,9 +82,9 @@
       "short": "Seamless Gutters",
       "icon": "install",
       "blurb": "Custom 6\" and 7\" seamless aluminum gutters, roll-formed on site to fit your roofline with zero seams and zero leaks.",
-      "title": "Seamless Gutter Installation Palm Beach County | 6\" & 7\" Gutters",
-      "description": "Seamless aluminum gutter installation in Boynton Beach, Delray Beach, Boca Raton & all of Palm Beach County. Custom 6-inch and 7-inch gutters, 30+ colors, lifetime workmanship warranty. Free estimates.",
-      "h1": "Seamless Gutter Installation in Palm Beach County",
+      "title": "Seamless Gutter Installation Boca Raton, Delray Beach & Boynton Beach FL",
+      "description": "Seamless aluminum gutter installation in Boca Raton, Delray Beach, Boynton Beach and surrounding South Palm Beach County. Custom 6-inch and 7-inch gutters, leaf guards, 30+ colors, lifetime workmanship warranty. Free estimates.",
+      "h1": "Seamless Gutter Installation, Boca Raton to Boynton Beach",
       "intro": "Florida's wet season dumps over 60 inches of rain a year on your roof. Sectional gutters from the big-box store leak at every joint. Ocean1Gutters roll-forms seamless aluminum gutters right in your driveway, measured to the inch, so water goes exactly where it should: away from your foundation, fascia and landscaping.",
       "benefits": [
         {
@@ -121,7 +121,7 @@
       ],
       "faqs": [
         {
-          "q": "How much do seamless gutters cost in Palm Beach County?",
+          "q": "How much does seamless gutter installation cost in Boca Raton, Delray Beach or Boynton Beach?",
           "a": "Most homes fall between $9 and $16 per linear foot installed for 6\" aluminum, depending on stories, roof complexity and downspout count. A typical single-story 150 ft home lands around $1,500 to $2,400. Use our instant estimator or request a free written quote."
         },
         {
@@ -135,6 +135,64 @@
         {
           "q": "Are the gutters hurricane-rated?",
           "a": "We use screw-in hidden hangers at 24\" spacing which exceeds the Florida Building Code requirement and performs far better than spike-and-ferrule in high winds."
+        }
+      ]
+    },
+    {
+      "slug": "leaf-guard-gutters",
+      "name": "Leaf Guard Gutters & Gutter Guards",
+      "short": "Leaf Guards",
+      "icon": "guard",
+      "blurb": "Micro-mesh and aluminum leaf guards that keep palm fronds and pine needles out for good.",
+      "title": "Leaf Guard Gutters Boca Raton, Delray Beach & Boynton Beach | Gutter Guard Installation",
+      "description": "Leaf guard gutter installation from Boca Raton to Boynton Beach. Stainless micro-mesh gutter guards that stop palm fronds, pine needles and roof grit for good. Fits new or existing gutters. Free estimates: (561) 767-6528.",
+      "h1": "Leaf Guard Gutters & Gutter Guard Installation",
+      "intro": "Stop paying to clean your gutters twice a year. Our stainless micro-mesh guards let water through and keep everything else out, including the tiny shingle grit and pine needles that defeat cheap plastic screens.",
+      "benefits": [
+        {
+          "h": "Stainless micro-mesh",
+          "p": "Blocks debris as small as roof sand while handling the heaviest Florida downpours."
+        },
+        {
+          "h": "Fits existing gutters",
+          "p": "We can retrofit guards onto sound 5\", 6\" or 7\" gutters, or install them with a new system."
+        },
+        {
+          "h": "No roof penetration",
+          "p": "Guards attach to the gutter and under the drip edge. Your roof warranty stays intact."
+        },
+        {
+          "h": "Low profile",
+          "p": "Nearly invisible from the ground. No bulky hoods or reverse-curve gimmicks."
+        },
+        {
+          "h": "Pest & mosquito barrier",
+          "p": "Keeps standing water and nesting debris out, which keeps mosquitoes and wasps out."
+        },
+        {
+          "h": "Transferable warranty",
+          "p": "Manufacturer-backed warranty that transfers to the next owner, a selling point for your home."
+        }
+      ],
+      "process": [
+        "Free inspection to confirm your gutters are sound enough for guards",
+        "Gutters cleaned and re-pitched if needed",
+        "Guards cut and fitted to each run, secured with stainless screws",
+        "Water test to confirm flow at every section",
+        "Walk-through and warranty registration"
+      ],
+      "faqs": [
+        {
+          "q": "Do gutter guards really work in Florida?",
+          "a": "Quality micro-mesh guards do. Cheap foam and plastic screens fail against palm fronds and pine needles. We only install products we've seen hold up through hurricane seasons."
+        },
+        {
+          "q": "Will I never have to clean my gutters again?",
+          "a": "You'll go from twice a year to a quick visual check every few years. Debris that lands on the mesh dries and blows off."
+        },
+        {
+          "q": "How much do gutter guards cost?",
+          "a": "Typically $8 to $14 per linear foot installed, depending on product and gutter size. Bundle with new gutters and save."
         }
       ]
     },
@@ -255,64 +313,6 @@
       ]
     },
     {
-      "slug": "gutter-guards",
-      "name": "Gutter Guards & Leaf Protection",
-      "short": "Gutter Guards",
-      "icon": "guard",
-      "blurb": "Micro-mesh and aluminum leaf guards that keep palm fronds and pine needles out for good.",
-      "title": "Gutter Guards & Leaf Guards Palm Beach County | Clog-Free Gutters",
-      "description": "Gutter guard installation in Palm Beach County. Micro-mesh and aluminum leaf guards that stop palm fronds, pine needles and roof grit. Fits new or existing gutters. Free estimates.",
-      "h1": "Gutter Guards & Leaf Protection",
-      "intro": "Stop paying to clean your gutters twice a year. Our stainless micro-mesh guards let water through and keep everything else out, including the tiny shingle grit and pine needles that defeat cheap plastic screens.",
-      "benefits": [
-        {
-          "h": "Stainless micro-mesh",
-          "p": "Blocks debris as small as roof sand while handling the heaviest Florida downpours."
-        },
-        {
-          "h": "Fits existing gutters",
-          "p": "We can retrofit guards onto sound 5\", 6\" or 7\" gutters, or install them with a new system."
-        },
-        {
-          "h": "No roof penetration",
-          "p": "Guards attach to the gutter and under the drip edge. Your roof warranty stays intact."
-        },
-        {
-          "h": "Low profile",
-          "p": "Nearly invisible from the ground. No bulky hoods or reverse-curve gimmicks."
-        },
-        {
-          "h": "Pest & mosquito barrier",
-          "p": "Keeps standing water and nesting debris out, which keeps mosquitoes and wasps out."
-        },
-        {
-          "h": "Transferable warranty",
-          "p": "Manufacturer-backed warranty that transfers to the next owner, a selling point for your home."
-        }
-      ],
-      "process": [
-        "Free inspection to confirm your gutters are sound enough for guards",
-        "Gutters cleaned and re-pitched if needed",
-        "Guards cut and fitted to each run, secured with stainless screws",
-        "Water test to confirm flow at every section",
-        "Walk-through and warranty registration"
-      ],
-      "faqs": [
-        {
-          "q": "Do gutter guards really work in Florida?",
-          "a": "Quality micro-mesh guards do. Cheap foam and plastic screens fail against palm fronds and pine needles. We only install products we've seen hold up through hurricane seasons."
-        },
-        {
-          "q": "Will I never have to clean my gutters again?",
-          "a": "You'll go from twice a year to a quick visual check every few years. Debris that lands on the mesh dries and blows off."
-        },
-        {
-          "q": "How much do gutter guards cost?",
-          "a": "Typically $8 to $14 per linear foot installed, depending on product and gutter size. Bundle with new gutters and save."
-        }
-      ]
-    },
-    {
       "slug": "copper-and-specialty-gutters",
       "name": "Copper & Specialty Gutters",
       "short": "Copper Gutters",
@@ -421,7 +421,43 @@
         "Mizner Park",
         "Boca Isles"
       ],
-      "note": "Copper half-round, oversized 7\" seamless and HOA-compliant colors for Boca's estate homes and gated communities."
+      "note": "Copper half-round, oversized 7\" seamless and HOA-compliant leaf guards for Boca's estate homes and gated communities."
+    },
+    {
+      "slug": "highland-beach",
+      "name": "Highland Beach",
+      "zip": "33487",
+      "lat": 26.3995,
+      "lng": -80.0656,
+      "neighborhoods": [
+        "Boca Highland",
+        "Bel Lido",
+        "Toscana",
+        "Villa Magna",
+        "Regency Highland",
+        "Ocean Grande",
+        "Braemar Isle",
+        "Highland Beach Club"
+      ],
+      "note": "Oceanfront salt air eats cheap fasteners. We use stainless screws and heavy-gauge aluminum on every Highland Beach install."
+    },
+    {
+      "slug": "deerfield-beach",
+      "name": "Deerfield Beach",
+      "zip": "33441",
+      "lat": 26.3184,
+      "lng": -80.0998,
+      "neighborhoods": [
+        "Deer Creek",
+        "The Cove",
+        "Crystal Lake",
+        "Independence Bay",
+        "Century Village",
+        "Waterways",
+        "Starlight Cove",
+        "Deerfield Island"
+      ],
+      "note": "Just south of Boca, Deerfield Beach is on our daily route for seamless gutter installation and leaf guards."
     },
     {
       "slug": "lake-worth-beach",
@@ -436,28 +472,46 @@
         "Lake Osborne",
         "Tropical Ridge",
         "Lantana",
-        "Greenacres",
-        "Palm Springs"
+        "Palm Springs",
+        "Atlantis"
       ],
       "note": "Older Lake Worth homes often have original fascia that needs attention before new gutters go up. We handle both in one visit."
     },
     {
-      "slug": "west-palm-beach",
-      "name": "West Palm Beach",
-      "zip": "33401",
-      "lat": 26.7153,
-      "lng": -80.0534,
+      "slug": "lantana",
+      "name": "Lantana",
+      "zip": "33462",
+      "lat": 26.5868,
+      "lng": -80.052,
       "neighborhoods": [
-        "El Cid",
-        "Flamingo Park",
-        "SoSo",
-        "Northwood",
-        "Ibis",
-        "Andros Isle",
-        "Baywinds",
-        "Riverwalk"
+        "Hypoluxo Island",
+        "Lantana Heights",
+        "Seminole Manor",
+        "Manalapan",
+        "South Palm Beach",
+        "Water Tower Commons",
+        "Sea Pines",
+        "Hypoluxo"
       ],
-      "note": "From downtown historic districts to western gated communities, West Palm Beach is one of our busiest service zones."
+      "note": "Minutes from our shop. Lantana and Hypoluxo homeowners can often get same-week installation."
+    },
+    {
+      "slug": "greenacres",
+      "name": "Greenacres",
+      "zip": "33463",
+      "lat": 26.6276,
+      "lng": -80.1353,
+      "neighborhoods": [
+        "River Bridge",
+        "Pine Ridge",
+        "Nautica Isles",
+        "Olympia Villas",
+        "Lake Charleston",
+        "Winston Trails",
+        "Sherbrooke",
+        "Palm Springs"
+      ],
+      "note": "Greenacres and the Lake Worth corridor get fast scheduling for leaf guard installs and gutter replacements."
     },
     {
       "slug": "wellington",
@@ -478,76 +532,22 @@
       "note": "Large roof planes and barns mean high water volume. We size 7\" gutters and 3x4 downspouts for Wellington's equestrian estates."
     },
     {
-      "slug": "palm-beach-gardens",
-      "name": "Palm Beach Gardens",
-      "zip": "33410",
-      "lat": 26.8234,
-      "lng": -80.1387,
+      "slug": "west-palm-beach",
+      "name": "West Palm Beach",
+      "zip": "33401",
+      "lat": 26.7153,
+      "lng": -80.0534,
       "neighborhoods": [
-        "PGA National",
-        "Mirasol",
-        "Frenchman's Reserve",
-        "Evergrene",
-        "Ballenisles",
-        "Eastpointe",
-        "Alton",
-        "Old Palm"
+        "El Cid",
+        "Flamingo Park",
+        "SoSo",
+        "Northwood",
+        "Ibis",
+        "Andros Isle",
+        "Baywinds",
+        "Riverwalk"
       ],
-      "note": "HOA color approvals handled for you. We carry the exact color charts most Gardens communities require."
-    },
-    {
-      "slug": "jupiter",
-      "name": "Jupiter",
-      "zip": "33458",
-      "lat": 26.9342,
-      "lng": -80.0942,
-      "neighborhoods": [
-        "Abacoa",
-        "Jupiter Farms",
-        "Admirals Cove",
-        "Jonathan's Landing",
-        "Tequesta",
-        "Juno Beach",
-        "Jupiter Inlet Colony",
-        "Egret Landing"
-      ],
-      "note": "Salt air near the inlet is brutal on fasteners. We use stainless screws and heavy-gauge aluminum on every Jupiter install."
-    },
-    {
-      "slug": "royal-palm-beach",
-      "name": "Royal Palm Beach",
-      "zip": "33411",
-      "lat": 26.7084,
-      "lng": -80.2306,
-      "neighborhoods": [
-        "Madison Green",
-        "Saratoga",
-        "Counterpoint Estates",
-        "La Mancha",
-        "Crestwood",
-        "Willows",
-        "Village Walk",
-        "Acreage"
-      ],
-      "note": "Fast scheduling for Royal Palm Beach and The Acreage, including larger lots and detached garages."
-    },
-    {
-      "slug": "lantana",
-      "name": "Lantana",
-      "zip": "33462",
-      "lat": 26.5868,
-      "lng": -80.052,
-      "neighborhoods": [
-        "Hypoluxo Island",
-        "Lantana Heights",
-        "Seminole Manor",
-        "Atlantis",
-        "Manalapan",
-        "South Palm Beach",
-        "Water Tower Commons",
-        "Sea Pines"
-      ],
-      "note": "Minutes from our shop. Lantana and Hypoluxo homeowners can often get same-week installation."
+      "note": "From downtown historic districts to western gated communities, West Palm Beach rounds out the northern edge of our service area."
     }
   ],
   "reviews": [
@@ -579,7 +579,7 @@
       "name": "Susan K.",
       "city": "Wellington",
       "stars": 5,
-      "text": "Micro-mesh guards have been through two hurricane seasons with zero clogs. Should have done this years ago."
+      "text": "Leaf guard gutters installed on the whole house in one day. Two hurricane seasons later, zero clogs and I haven't touched a ladder. Should have done this years ago."
     },
     {
       "name": "Robert T.",
@@ -589,6 +589,10 @@
     }
   ],
   "homeFaqs": [
+    {
+      "q": "What are leaf guard gutters and do they work in South Florida?",
+      "a": "Leaf guard gutters are seamless gutters fitted with a stainless micro-mesh cover that lets rain in and keeps palm fronds, pine needles, oak leaves and roof grit out. Done right, they end gutter cleaning. We install them on new seamless systems and retrofit them onto sound existing gutters from Boca Raton to Boynton Beach."
+    },
     {
       "q": "Do I really need gutters in Florida?",
       "a": "Yes. Florida gets 60+ inches of rain a year, often in short, intense bursts. Without gutters, water pounds the soil at your foundation, splashes stucco, rots fascia and soffits, and floods walkways. Gutters move that water to where it drains safely."
@@ -727,16 +731,16 @@
           "href": "/services/seamless-gutter-installation/"
         },
         {
+          "label": "Leaf Guard Gutters & Gutter Guards",
+          "href": "/services/leaf-guard-gutters/"
+        },
+        {
           "label": "Gutter Repair",
           "href": "/services/gutter-repair/"
         },
         {
           "label": "Gutter Cleaning",
           "href": "/services/gutter-cleaning/"
-        },
-        {
-          "label": "Gutter Guards & Leaf Protection",
-          "href": "/services/gutter-guards/"
         },
         {
           "label": "Copper & Specialty Gutters",
@@ -761,32 +765,32 @@
           "href": "/gutters-boca-raton-fl/"
         },
         {
+          "label": "Highland Beach",
+          "href": "/gutters-highland-beach-fl/"
+        },
+        {
+          "label": "Deerfield Beach",
+          "href": "/gutters-deerfield-beach-fl/"
+        },
+        {
           "label": "Lake Worth Beach",
           "href": "/gutters-lake-worth-beach-fl/"
         },
         {
-          "label": "West Palm Beach",
-          "href": "/gutters-west-palm-beach-fl/"
+          "label": "Lantana",
+          "href": "/gutters-lantana-fl/"
+        },
+        {
+          "label": "Greenacres",
+          "href": "/gutters-greenacres-fl/"
         },
         {
           "label": "Wellington",
           "href": "/gutters-wellington-fl/"
         },
         {
-          "label": "Palm Beach Gardens",
-          "href": "/gutters-palm-beach-gardens-fl/"
-        },
-        {
-          "label": "Jupiter",
-          "href": "/gutters-jupiter-fl/"
-        },
-        {
-          "label": "Royal Palm Beach",
-          "href": "/gutters-royal-palm-beach-fl/"
-        },
-        {
-          "label": "Lantana",
-          "href": "/gutters-lantana-fl/"
+          "label": "West Palm Beach",
+          "href": "/gutters-west-palm-beach-fl/"
         }
       ]
     },

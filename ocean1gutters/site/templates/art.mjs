@@ -1,13 +1,16 @@
 // SVG artwork used as lightweight, crisp placeholders for real photography.
 // Swap for real photos by replacing the <svg> with <img> in build.mjs (search "ART:").
 
-export const logoMark = `<svg class="logo__mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-<rect width="48" height="48" rx="12" fill="url(#lg)"/>
-<path d="M10 20 24 9l14 11" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12 24h24v3a4 4 0 0 1-4 4H16a4 4 0 0 1-4-4z" fill="#7fe3d7"/>
-<path d="M31 31v8" stroke="#7fe3d7" stroke-width="3" stroke-linecap="round"/>
-<path d="M14 40c3-2 5-2 8 0s5 2 8 0" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
-<defs><linearGradient id="lg" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#2f8fd6"/><stop offset="1" stop-color="#0b2545"/></linearGradient></defs>
+export const logoMark = `<svg class="logo__mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><linearGradient id="lg" x1="8" y1="8" x2="56" y2="56"><stop stop-color="#1f5f99"/><stop offset="1" stop-color="#0b2545"/></linearGradient></defs>
+<!-- ring (G shape, open on the right) -->
+<path d="M32 6a26 26 0 1 0 26 26" stroke="url(#lg)" stroke-width="7" stroke-linecap="round"/>
+<!-- roof peak -->
+<path d="M18 27 32 15l14 12" stroke="#ff6b35" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- gutter trough + downspout -->
+<path d="M16 34h28a4 4 0 0 1 0 8H22" stroke="#2f8fd6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M44 42v12" stroke="#2f8fd6" stroke-width="6" stroke-linecap="round"/>
+<path d="M16 34h28" stroke="#7fe3d7" stroke-width="2" stroke-linecap="round" opacity=".8"/>
 </svg>`;
 
 // Hero: house with seamless gutter highlighted and animated rain.
@@ -112,7 +115,7 @@ export const previewHouse = (hex = "#f3f3f0") => `<svg viewBox="0 0 640 400" xml
 // Palm Beach County service-area map (stylized coastline + pins).
 // Pins positioned via simple lat/lng projection into the viewBox.
 export function areaMap(cities) {
-  const latMin = 26.3, latMax = 26.98, lngMin = -80.35, lngMax = -79.98;
+  const latMin = 26.26, latMax = 26.78, lngMin = -80.35, lngMax = -79.98;
   const W = 640, H = 560;
   const px = (lng) => ((lng - lngMin) / (lngMax - lngMin)) * (W - 80) + 40;
   const py = (lat) => H - (((lat - latMin) / (latMax - latMin)) * (H - 80) + 40);

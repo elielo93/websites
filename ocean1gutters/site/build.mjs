@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Static site generator for Ocean1Gutters.
 // Usage: node build.mjs → writes ../dist (upload to Hostinger) and exports partials/content to ../wordpress/ocean1gutters
-import { mkdirSync, writeFileSync, copyFileSync, rmSync, existsSync, readdirSync, readFileSync } from "node:fs";
+import { mkdirSync, writeFileSync, copyFileSync, rmSync, existsSync, readdirSync, readFileSync, cpSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import * as data from "./data/site.mjs";
@@ -46,7 +46,7 @@ emit(P.notFoundPage(), { sitemap: false });
 // ---- Assets
 mkdirSync(join(dist, "assets/css"), { recursive: true }); mkdirSync(join(dist, "assets/js"), { recursive: true }); mkdirSync(join(dist, "assets/img"), { recursive: true });
 copyFileSync(join(here, "assets/css/main.css"), join(dist, "assets/css/main.css"));
-copyFileSync(join(here, "assets/js/main.js"), join(dist, "assets/js/main.js"));
+cpSync(join(here, "assets/js"), join(dist, "assets/js"), { recursive: true });
 const plainLogo = logoMark.replace('class="logo__mark" ', "");
 write("favicon.svg", plainLogo);
 write("assets/img/logo.svg", plainLogo);
@@ -70,7 +70,7 @@ copyFileSync(join(here, "server/config.sample.php"), join(dist, "config.sample.p
 // ---- Export to the WordPress theme: assets, content, icons, tokenized partials
 for (const d of ["inc", "inc/partials", "assets/css", "assets/js", "assets/img"]) mkdirSync(join(wp, d), { recursive: true });
 copyFileSync(join(here, "assets/css/main.css"), join(wp, "assets/css/main.css"));
-copyFileSync(join(here, "assets/js/main.js"), join(wp, "assets/js/main.js"));
+cpSync(join(here, "assets/js"), join(wp, "assets/js"), { recursive: true });
 writeFileSync(join(wp, "assets/img/logo.svg"), plainLogo);
 if (existsSync(imgSrc)) for (const f of readdirSync(imgSrc)) if (!f.startsWith(".")) copyFileSync(join(imgSrc, f), join(wp, "assets/img", f));
 writeFileSync(join(wp, "assets/img/og-default.svg"), readFileSync(join(dist, "assets/img/og-default.svg")));
