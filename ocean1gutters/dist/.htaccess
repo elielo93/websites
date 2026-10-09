@@ -1,0 +1,60 @@
+# Ocean1Gutters — Apache config for Hostinger (LiteSpeed-compatible)
+
+# ---- Canonical: force HTTPS + www
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+RewriteRule ^ https://www.%1%{REQUEST_URI} [R=301,L]
+
+# ---- Clean URLs: /page → /page/ (trailing slash) and serve index.html
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.*)$ /$1/ [R=301,L]
+DirectoryIndex index.html index.php
+
+# ---- Redirects from the OLD site structure (preserve SEO equity)
+Redirect 301 /about-us/boynton-beach /gutters-boynton-beach-fl/
+Redirect 301 /about-us/delray-beach /gutters-delray-beach-fl/
+Redirect 301 /about-us/boca-raton /gutters-boca-raton-fl/
+Redirect 301 /about-us /about/
+Redirect 301 /index.html /
+
+# ---- Custom error page
+ErrorDocument 404 /404.html
+
+# ---- Security headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+</IfModule>
+
+# ---- Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml text/xml application/xml
+</IfModule>
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# ---- Browser caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+
+# ---- Protect config + logs
+<FilesMatch "^(config\.php|config\.sample\.php|leads-log\.csv)$">
+  Require all denied
+</FilesMatch>
+Options -Indexes

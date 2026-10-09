@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you/
+Disallow: /contact.php
+
+Sitemap: https://www.ocean1gutters.com/sitemap.xml

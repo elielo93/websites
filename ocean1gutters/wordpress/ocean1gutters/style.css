@@ -1,0 +1,30 @@
+/*
+Theme Name: Ocean1Gutters
+Theme URI: https://www.ocean1gutters.com
+Author: Ocean1Gutters
+Description: High-performance, SEO-first lead-generation theme for Ocean1Gutters, a seamless gutter company in Palm Beach County, FL. Vanilla CSS/JS, no page builder, no jQuery. Includes instant estimator, before/after slider, color picker, service-area map, lead capture with a Leads inbox, LocalBusiness/Service/FAQ schema, and a one-click content installer (Appearance → Ocean1 Setup).
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+Text Domain: ocean1gutters
+*/
+
+/* Main styles are enqueued from assets/css/main.css. WordPress-specific overrides only below. */
+.admin-bar .header { top: 32px; }
+@media (max-width: 782px) { .admin-bar .header { top: 46px; } }
+.admin-bar .drawer { padding-top: calc(var(--header-h) + 62px); }
+.wp-block-image img, .content img { border-radius: var(--radius); height: auto; }
+.content .wp-block-quote { border-left: 4px solid var(--aqua-500); padding-left: 1em; color: var(--ink-700); }
+.content figure { margin: 1.5em 0; }
+.screen-reader-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+.post-card__img img { width: 100%; height: 100%; object-fit: cover; }
+.nav__menu .menu-item a { white-space: nowrap; }
+.wp-caption { max-width: 100%; }
+.alignleft { float: left; margin: 0 1.5em 1em 0; }
+.alignright { float: right; margin: 0 0 1em 1.5em; }
+.aligncenter { display: block; margin: 0 auto; }
+.pagination { display: flex; gap: 8px; justify-content: center; margin-top: 32px; }
+.pagination .page-numbers { padding: 10px 16px; border-radius: 999px; border: 1px solid var(--line); font-weight: 700; }
+.pagination .page-numbers.current { background: var(--navy-800); color: #fff; border-color: var(--navy-800); }

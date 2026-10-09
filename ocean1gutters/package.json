@@ -1,0 +1,12 @@
+{
+  "name": "ocean1gutters-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Ocean1Gutters website: static build for Hostinger + WordPress theme",
+  "scripts": {
+    "build": "node site/build.mjs",
+    "serve": "node site/build.mjs && python3 -m http.server 8080 --directory dist",
+    "zip:theme": "node site/build.mjs && cd wordpress && rm -f ocean1gutters-theme.zip && zip -rq ocean1gutters-theme.zip ocean1gutters -x '*.DS_Store' && echo 'wordpress/ocean1gutters-theme.zip ready'"
+  }
+}
